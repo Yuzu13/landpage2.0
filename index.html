@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jean Carvalho - Planos de Saúde</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Modal de Política de Privacidade -->
+<div id="modalPrivacidade">
+  <div class="modal-content">
+    <h2>Política de Privacidade</h2>
+    <p>Seus dados são tratados com segurança e usados apenas para atender às suas solicitações de plano de saúde. Não compartilhamos suas informações sem autorização.</p>
+    <button onclick="closeModal()">Fechar</button>
+  </div>
+</div>
+
+<!-- Aviso de Cookies -->
+<div id="cookieBanner">
+  <span>Utilizamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa <a href="#" onclick="openModal()" style="color: #BBDEFB; text-decoration: underline;">Política de Privacidade</a>.</span>
+  <button id="aceitarCookies">Aceitar</button>
+</div>
+
+<input type="hidden" name="_next" value="https://seudominio.com/agradecimento.html">
+<header>
+
+  <img src="#.png" alt="Sua Logo">
+  <h1>Jean Carvalho</h1>
+  <p>Consultoria Especializada em Planos de Saúde</p>
+</header>
+
+<!-- Botão Flutuante WhatsApp -->
+<a href="https://api.whatsapp.com/send?phone=5531987902430&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20planos!" 
+   class="whatsapp-float" target="_blank" title="Fale conosco pelo WhatsApp">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+
+<nav>
+  <a href="#planos">Tipos de Planos</a>
+  <a href="#formulario">Consultoria</a>
+  <a href="#privacidade">Política de Privacidade</a>
+</nav>
+
+<section class="hero">
+  <h1>Encontre o Plano de Saúde Ideal!</h1>
+  <p>Compare diversas opções e escolha o melhor para você e sua família.</p>
+</section>
+
+<section id="planos" class="plans-section">
+  <h2>Tipos de Planos</h2>
+  <div class="plans-container">
+    <div class="plan">
+      <h3>Plano Individual</h3>
+      <p>Cobertura nacional para quem busca atendimento individual.</p>
+    </div>
+    <div class="plan">
+      <h3>Plano Familiar</h3>
+      <p>Perfeito para proteger toda a sua família com economia.</p>
+    </div>
+    <div class="plan">
+      <h3>Plano Empresarial</h3>
+      <p>Atenda seus colaboradores com planos acessíveis e completos.</p>
+    </div>
+  </div>
+</section>
+
+<section id="formulario" class="form-lead-section">
+  <div class="lead-text">
+    <h2>Solicite sua Consultoria Gratuita</h2>
+    <p>Preencha o formulário e tenha o plano ideal para sua saúde!</p>
+  </div>
+
+  <form action="https://formsubmit.co/markota233@gmail.com" method="POST">
+    <input type="text" name="nome" placeholder="Nome completo" required>
+    <input type="email" name="email" placeholder="E-mail" required>
+    <input type="text" name="cidade" placeholder="Cidade" required>
+    <input type="tel" name="telefone" placeholder="Telefone" required>
+    <select name="quantidade_vidas" required>
+      <option value="">Quantidade de Vidas</option>
+      <option>1</option>
+      <option>2-3</option>
+      <option>4-10</option>
+      <option>11+</option>
+    </select>
+    <select name="tipo_plano" required>
+      <option value="">Tipo de Plano</option>
+      <option>Individual</option>
+      <option>Familiar</option>
+      <option>Empresarial</option>
+    </select>
+  
+    <!-- Input oculto para redirecionar após o envio -->
+    <input type="hidden" name="_next" value="http://127.0.0.1:5500/agradecimento.html">
+  
+    <button type="submit">Enviar</button>
+  
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="Novo Formulário Recebido!">
+  </form>
+  
+  
+</section>
+
+<div id="mensagem"></div>
+
+<section class="container">
+  <div class="motivational-text">
+    <h3>Especialistas em Saúde</h3>
+    <p>Mais de 20 anos cuidando da saúde de milhares de clientes. Conte com a nossa expertise!</p>
+  </div>
+  <div class="companies">
+    <h3>Trabalhamos com:</h3>
+    <div>
+      <img src="logos/materdei_logo.png" alt="MaterDei">
+      <img src="logos/notredame_logo.png" alt="NotreDame">
+      <img src="logos/aurora-removebg.webp" alt="Aurora">
+      <img src="logos/BHappyMed.png" alt="BHappyMed">
+      <img src="logos/lifemed.png" alt="LifeMed">
+      <img src="logos/Blue.png" alt="Blue">
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Contato: (xx) xxxx-xxxx</p>
+  <p>&copy; 2025 Jean Carvalho. Todos os direitos reservados.</p>
+  <a href="#" onclick="openModal()">Política de Privacidade</a>
+</footer>
+
+<!-- Modal de Política de Privacidade -->
+<div id="modalPrivacidade">
+  <div class="modal-content">
+    <h2>Política de Privacidade</h2>
+    <p>Seus dados são tratados com segurança e usados apenas para atender às suas solicitações de plano de saúde. Não compartilhamos suas informações sem autorização. A coleta é feita com base nos dados fornecidos por você via formulário, e é exclusivamente usada para consultoria de planos de saúde.</p>
+    <button class="fechar-btn" onclick="closeModal()">Fechar</button>
+  </div>
+</div>
+
+
+<script>
+  
+  document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('modalPrivacidade');
+    const form = document.querySelector('form');
+    const mensagem = document.getElementById('mensagem');
+    const cookieBanner = document.getElementById('cookieBanner');
+
+    // Mostrar o aviso de cookies se ainda não aceitou
+    if (!localStorage.getItem('cookiesAceitos')) {
+      cookieBanner.style.display = 'flex';
+    }
+
+    // Aceitar cookies
+    document.getElementById('aceitarCookies').addEventListener('click', function () {
+      localStorage.setItem('cookiesAceitos', true);
+      cookieBanner.style.display = 'none';
+    });
+
+    // Abrir Modal
+    window.openModal = function () {
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // desativa scroll
+      }
+    };
+
+    // Fechar Modal
+    window.closeModal = function () {
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = ''; // reativa scroll
+      }
+    };
+
+    // Mensagem de envio
+    if (form) {
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        if (mensagem) {
+          mensagem.textContent = 'Cadastro realizado com sucesso!';
+        }
+        setTimeout(() => {
+          form.submit();
+        }, 1500);
+      });
+    }
+  });
+</script>
+
+
+
+</body>
+</html>
