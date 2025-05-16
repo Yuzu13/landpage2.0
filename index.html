@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <!-- Modal de Política de Privacidade -->
 <div id="modalPrivacidade">
   <div class="modal-content">
@@ -22,8 +21,8 @@
   <span>Utilizamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa <a href="#" onclick="openModal()" style="color: #BBDEFB; text-decoration: underline;">Política de Privacidade</a>.</span>
   <button id="aceitarCookies">Aceitar</button>
 </div>
-
 <input type="hidden" name="_next" value="https://seudominio.com/agradecimento.html">
+
 <header>
 
   <img src="#.png" alt="Sua Logo">
@@ -72,11 +71,14 @@
     <p>Preencha o formulário e tenha o plano ideal para sua saúde!</p>
   </div>
 
-  <form action="https://formsubmit.co/markota233@gmail.com" method="POST">
+    <form action="https://formsubmit.co/markota233@gmail.com" method="POST">
     <input type="text" name="nome" placeholder="Nome completo" required>
-    <input type="email" name="email" placeholder="E-mail" required>
+    <input type="email" name="email" placeholder="E-mail" id="E-mail" required>
     <input type="text" name="cidade" placeholder="Cidade" required>
-    <input type="tel" name="telefone" placeholder="Telefone" required>
+
+    <input type="tel" name="telefone" placeholder="(00) 00000-0000" required id="telefone">
+
+
     <select name="quantidade_vidas" required>
       <option value="">Quantidade de Vidas</option>
       <option>1</option>
@@ -84,6 +86,7 @@
       <option>4-10</option>
       <option>11+</option>
     </select>
+
     <select name="tipo_plano" required>
       <option value="">Tipo de Plano</option>
       <option>Individual</option>
@@ -140,7 +143,20 @@
 
 
 <script>
-  
+ 
+       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+       src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/jquery.inputmask.min.js"
+
+          $(document).ready(function() {
+            $('#telefone').inputmask({
+              mask: '(99) 99999-9999',
+              placeholder: '_',
+              showMaskOnFocus: true,
+              showMaskOnHover: false,
+              clearIncomplete: true
+            });
+          });
+
   document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('modalPrivacidade');
     const form = document.querySelector('form');
@@ -187,9 +203,69 @@
       });
     }
   });
+
+ 
+   
+  
 </script>
 
+<script>
+   // telefone
+  (function(){
+    const tel = document.getElementById('telefone');
 
+    // Ao focar: insere "(" se campo vazio
+    tel.addEventListener('focus', () => {
+      if (!tel.value) tel.value = '(';
+    });
+
+    // Ao desfocar: se só tiver "(", limpa
+    tel.addEventListener('blur', () => {
+      if (tel.value === '(') tel.value = '';
+    });
+
+    // Formatação dinâmica e bloqueio de não-dígitos
+    tel.addEventListener('input', () => {
+      let nums = tel.value.replace(/\D/g, '');
+      // limita a 11 dígitos
+      nums = nums.substring(0, 11);
+
+      if (nums.length <= 2) {
+        // só DDD parcial
+        tel.value = '(' + nums;
+      } else if (nums.length <= 6) {
+        // DDD + parte do número fixo (4 dígitos)
+        tel.value = '(' + nums.substring(0,2) + ') ' + nums.substring(2);
+      } else if (nums.length <= 10) {
+        // DDD + fixo completo
+        tel.value = '(' + nums.substring(0,2) + ') ' + nums.substring(2,6) + '-' + nums.substring(6);
+      } else {
+        // DDD + celular completo
+        tel.value = '(' + nums.substring(0,2) + ') ' + nums.substring(2,7) + '-' + nums.substring(7);
+      }
+    });
+
+    // Validação final no submit
+    document.getElementById('formularioContato').addEventListener('submit', function(e){
+      const telefone = tel.value;
+      const email   = this.email.value.trim();
+
+      const fixo    = /^\(\d{2}\) \d{4}-\d{4}$/.test(telefone);
+      const celular = /^\(\d{2}\) \d{5}-\d{4}$/.test(telefone);
+      const mail    = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      if (!(fixo || celular)) {
+        alert('Telefone inválido. Use (11) 91234-5678 ou (11) 3456-7890.');
+        e.preventDefault();
+        return;
+      }
+      if (!mail) {
+        alert('E-mail inválido. Digite exemplo@dominio.com');
+        e.preventDefault();
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>
