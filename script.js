@@ -11,3 +11,6 @@ document.querySelector('form').addEventListener('submit', function(event) {
     this.submit();
   }, 1500);
 });
+document.getElementById('telefone').addEventListener('input', function (e) {
+    this.value = this.value.replace(/\D/g, ''); // Remove tudo que não for número
+  });
