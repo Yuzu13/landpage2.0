@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jean Carvalho - Planos de Saúde</title>
+  <title>Planos de Saúde Unimed-BH
+  </title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Modal de Política de Privacidade -->
-<div id="modalPrivacidade">
+  <div id="modalPrivacidade">
   <div class="modal-content">
     <h2>Política de Privacidade</h2>
     <p>Seus dados são tratados com segurança e usados apenas para atender às suas solicitações de plano de saúde. Não compartilhamos suas informações sem autorização.</p>
@@ -16,31 +16,36 @@
   </div>
 </div>
 
-<!-- Aviso de Cookies -->
 <div id="cookieBanner">
   <span>Utilizamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa <a href="#" onclick="openModal()" style="color: #BBDEFB; text-decoration: underline;">Política de Privacidade</a>.</span>
   <button id="aceitarCookies">Aceitar</button>
 </div>
 <input type="hidden" name="_next" value="https://seudominio.com/agradecimento.html">
 
-<header>
+<header class="site-header">
+  <div class="header-container">
+    
+    <a href="#" class="logo">
+      <img src="2.png" alt="Logo Unimed Consultoria">
+      </a>
 
-  <img src="#.png" alt="Sua Logo">
-  <h1>Jean Carvalho</h1>
-  <p>Consultoria Especializada em Planos de Saúde</p>
+    <nav class="main-nav">
+      
+      <button class="nav-toggle" aria-label="Abrir menu">
+        <span class="hamburger"></span>
+      </button>
+
+      <ul class="nav-menu">
+        <li><a href="#planos">Tipos de Planos</a></li>
+        <li><a href="#formulario">Solicitar Consultoria</a></li>
+        <li><a href="#privacidade" onclick="openModal(); return false;">Política de Privacidade</a></li>
+      </ul>
+    </nav>
+
+    <a href="#formulario" class="header-cta">Quero Meu Plano</a>
+
+  </div>
 </header>
-
-<!-- Botão Flutuante WhatsApp -->
-<a href="https://api.whatsapp.com/send?phone=5531987902430&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20planos!" 
-   class="whatsapp-float" target="_blank" title="Fale conosco pelo WhatsApp">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-</a>
-
-<nav>
-  <a href="#planos">Tipos de Planos</a>
-  <a href="#formulario">Consultoria</a>
-  <a href="#privacidade">Política de Privacidade</a>
-</nav>
 
 <section class="hero">
   <h1>Encontre o Plano de Saúde Ideal!</h1>
@@ -48,36 +53,117 @@
 </section>
 
 <section id="planos" class="plans-section">
-  <h2>Tipos de Planos</h2>
+  <h2>Planos Unimed-BH</h2>
+  <p class="section-subtitle">
+    A Unimed-BH oferece diferentes planos para atender você, sua família e sua empresa. Todos eles oferecem cobertura para consultas, urgência e emergência, internações, partos, exames e procedimentos. Conheça todas as opções abaixo:
+  </p>
+
   <div class="plans-container">
+
     <div class="plan">
-      <h3>Plano Individual</h3>
-      <p>Cobertura nacional para quem busca atendimento individual.</p>
+      <h3>Bem Digital</h3>
+      <p class="plan-description">
+        A opção mais acessível da Unimed-BH, voltada para quem tem uma rotina cheia, é digitalizado e gosta de resolver tudo online.
+      </p>
+      <ul class="plan-features">
+        <li><strong>Ideal para:</strong> Pessoas com rotina agitada que prezam pela praticidade digital.</li>
+        <li><strong>Abrangência:</strong> Belo Horizonte, Betim, Contagem e Nova Lima.</li>
+        <li><strong>Coparticipação:</strong> Isenta em consultas online e internações.</li>
+        <li><strong>Rede de atendimento:</strong> Hospitais como Semper, São Camilo e Maternidade Unimed.</li>
+        <li><strong>Contratação:</strong> Pessoa Física (CPF) e MEI.</li>
+      </ul>
+      <div class="plan-pricing">
+        A partir de <strong>R$ 143,16</strong> (CPF) ou <strong>R$ 113,52</strong> (CNPJ).
+      </div>
     </div>
+
     <div class="plan">
-      <h3>Plano Familiar</h3>
-      <p>Perfeito para proteger toda a sua família com economia.</p>
+      <h3>Unimed Pleno</h3>
+      <p class="plan-description">
+        Atendimento próximo e personalizado com um médico de referência e equipe de saúde dedicada a você e sua saúde de forma contínua.
+      </p>
+      <ul class="plan-features">
+        <li><strong>Ideal para:</strong> Quem valoriza um acompanhamento contínuo e preventivo da saúde.</li>
+        <li><strong>Abrangência:</strong> Belo Horizonte, Betim e Contagem.</li>
+        <li><strong>Coparticipação:</strong> Isenta em consultas com a equipe de referência e internações.</li>
+        <li><strong>Rede de atendimento:</strong> +15 hospitais e +190 clínicas e laboratórios.</li>
+        <li><strong>Contratação:</strong> Pessoa Física (CPF), Empresas e MEI.</li>
+      </ul>
+      <div class="plan-pricing">
+        A partir de <strong>R$ 232,67</strong> (CPF) ou <strong>R$ 149,24</strong> (CNPJ).
+      </div>
+
     </div>
+
     <div class="plan">
-      <h3>Plano Empresarial</h3>
-      <p>Atenda seus colaboradores com planos acessíveis e completos.</p>
+      <h3>Unifácil</h3>
+      <p class="plan-description">
+        A alternativa ideal que equilibra um investimento sob medida com a segurança e a rede exclusiva da Unimed-BH.<br> Qualidade sem pesar no orçamento.
+      </p>
+      <ul class="plan-features">
+        <li><strong>Ideal para:</strong> Quem busca o equilíbrio perfeito entre custo e qualidade.</li>
+        <li><strong>Abrangência:</strong> Belo Horizonte + 33 cidades de Minas Gerais.</li>
+        <li><strong>Coparticipação:</strong> Sim, em consultas, exames e internações.</li>
+        <li><strong>Rede de atendimento:</strong> +25 hospitais e +220 clínicas e laboratórios.</li>
+        <li><strong>Contratação:</strong> Pessoa Física (CPF), Empresas e MEI.</li>
+      </ul>
+      <div class="plan-pricing">
+        A partir de <strong>R$ 178,98</strong> (CPF) ou <strong>R$ 135,68</strong> (CNPJ).
+      </div>
+
     </div>
+
+    <div class="plan">
+      <h3>Unipart Flex</h3>
+      <p class="plan-description">
+        O plano mais desejado da Unimed-BH, contando com a maior rede de atendimento da operadora e flexibilidade na escolha da coparticipação.
+      </p>
+      <ul class="plan-features">
+        <li><strong>Ideal para:</strong> Quem deseja a máxima flexibilidade e a maior rede disponível.</li>
+        <li><strong>Abrangência:</strong> Belo Horizonte + 33 cidades de Minas Gerais.</li>
+        <li><strong>Coparticipação:</strong> Flexível (mensalidade moderada com coparticipação reduzida, ou vice-versa).</li>
+        <li><strong>Rede de atendimento:</strong> +39 hospitais e +270 clínicas e laboratórios.</li>
+        <li><strong>Contratação:</strong> Pessoa Física (CPF), Empresas e MEI.</li>
+      </ul>
+      <div class="plan-pricing">
+        A partir de <strong>R$ 255,67</strong> (CPF) ou <strong>R$ 190,83</strong> (CNPJ).
+      </div>
+     
+    </div>
+    
+    <div class="plan">
+      <h3>Unimax</h3>
+      <p class="plan-description">
+        Um plano exclusivo para empresas, com acesso à maior rede de atendimento da Unimed-BH e sem cobrança de coparticipação.
+      </p>
+      <ul class="plan-features">
+        <li><strong>Ideal para:</strong> Empresas que buscam um benefício premium sem surpresas no valor final.</li>
+        <li><strong>Abrangência:</strong> Belo Horizonte + 33 cidades de Minas Gerais.</li>
+        <li><strong>Coparticipação:</strong> Não possui.</li>
+        <li><strong>Rede de atendimento:</strong> +39 hospitais e +480 clínicas e laboratórios.</li>
+        <li><strong>Contratação:</strong> Exclusivo para empresas (CNPJ).</li>
+      </ul>
+      <div class="plan-pricing">
+        <strong>Plano empresarial. Consulte os valores.</strong>
+      </div>
+   
+    </div>
+
   </div>
 </section>
 
 <section id="formulario" class="form-lead-section">
-  <div class="lead-text">
-    <h2>Solicite sua Consultoria Gratuita</h2>
-    <p>Preencha o formulário e tenha o plano ideal para sua saúde!</p>
-  </div>
+ <div class="lead-text">
+  <img src="foto.webp" alt="Consultora de planos de saúde sorrindo">
+  
+  <h2>Solicite sua Consultoria Gratuita</h2>
+  <p>Preencha o formulário e tenha o plano ideal para sua saúde!</p>
+</div>
 
     <form action="https://formsubmit.co/markota233@gmail.com" method="POST">
     <input type="text" name="nome" placeholder="Nome completo" required>
     <input type="email" name="email" placeholder="E-mail" id="E-mail" required>
-    <input type="text" name="cidade" placeholder="Cidade" required>
-
     <input type="tel" name="telefone" placeholder="(00) 00000-0000" required id="telefone">
-
 
     <select name="quantidade_vidas" required>
       <option value="">Quantidade de Vidas</option>
@@ -87,23 +173,57 @@
       <option>11+</option>
     </select>
 
-    <select name="tipo_plano" required>
-      <option value="">Tipo de Plano</option>
-      <option>Individual</option>
-      <option>Familiar</option>
-      <option>Empresarial</option>
-    </select>
-  
-    <!-- Input oculto para redirecionar após o envio -->
+    <div class="custom-select-container">
+      <div id="selectHeaderTipoPlano" class="select-header" tabindex="0">
+        <span id="selectHeaderTextTipoPlano">Selecione o Tipo de Plano</span>
+        <span class="arrow">▼</span>
+      </div>
+
+      <select id="selectTipoPlano" name="tipo_plano[]" multiple required>
+        <option value="Individual">Bem Digital</option>
+        <option value="Familiar">Unimed Pleno</option>
+        <option value="Empresarial">Unifacil</option>
+        <option value="Empresarial">Unipar Flex</option>
+        <option value="Empresarial">Unimax</option>
+      </select>
+      <div class="form-group radio-group">
+      <p class="form-group-title">Você já é cliente Unimed-BH?*</p>
+      <div class="radio-options">
+        <label for="cliente_sim">
+          <input type="radio" id="cliente_sim" name="cliente_existente" value="Sim" required>
+          <span class="radio-label">Sim</span>
+        </label>
+        <label for="cliente_nao">
+          <input type="radio" id="cliente_nao" name="cliente_existente" value="Não">
+          <span class="radio-label">Não</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group checkbox-group">
+      <label for="consentimento">
+        <input type="checkbox" id="consentimento" name="consentimento" value="aceito" required>
+        <span class="checkbox-label">
+          Eu concordo em receber conteúdos e informes da Unimed-BH, conforme interesse declarado ao preencher este formulário, e concordo que meus dados fornecidos sejam armazenados e processados para essa finalidade. Para mais informações, confira nossa 
+          <a href="#" onclick="openModal(); return false;">Política de Privacidade</a>.*
+        </span>
+      </label>
+    </div>
+
+      <div id="valoresSelecionadosDisplay" class="selected-values-display empty">
+        <p>Planos selecionados:</p>
+        <ul id="listaSelecionadosDisplay"></ul>
+      </div>
+    </div>
+ 
     <input type="hidden" name="_next" value="http://127.0.0.1:5500/agradecimento.html">
-  
+ 
     <button type="submit">Enviar</button>
-  
+ 
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_subject" value="Novo Formulário Recebido!">
   </form>
-  
-  
+ 
 </section>
 
 <div id="mensagem"></div>
@@ -113,17 +233,6 @@
     <h3>Especialistas em Saúde</h3>
     <p>Mais de 20 anos cuidando da saúde de milhares de clientes. Conte com a nossa expertise!</p>
   </div>
-  <div class="companies">
-    <h3>Trabalhamos com:</h3>
-    <div>
-      <img src="logos/materdei_logo.png" alt="MaterDei">
-      <img src="logos/notredame_logo.png" alt="NotreDame">
-      <img src="logos/aurora-removebg.webp" alt="Aurora">
-      <img src="logos/BHappyMed.png" alt="BHappyMed">
-      <img src="logos/lifemed.png" alt="LifeMed">
-      <img src="logos/Blue.png" alt="Blue">
-    </div>
-  </div>
 </section>
 
 <footer>
@@ -132,7 +241,6 @@
   <a href="#" onclick="openModal()">Política de Privacidade</a>
 </footer>
 
-<!-- Modal de Política de Privacidade -->
 <div id="modalPrivacidade">
   <div class="modal-content">
     <h2>Política de Privacidade</h2>
@@ -141,130 +249,191 @@
   </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/jquery.inputmask.min.js"></script>
 
 <script>
- 
-       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-       src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/jquery.inputmask.min.js"
-
-          $(document).ready(function() {
-            $('#telefone').inputmask({
-              mask: '(99) 99999-9999',
-              placeholder: '_',
-              showMaskOnFocus: true,
-              showMaskOnHover: false,
-              clearIncomplete: true
-            });
-          });
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const modal = document.getElementById('modalPrivacidade');
-    const form = document.querySelector('form');
-    const mensagem = document.getElementById('mensagem');
-    const cookieBanner = document.getElementById('cookieBanner');
-
-    // Mostrar o aviso de cookies se ainda não aceitou
-    if (!localStorage.getItem('cookiesAceitos')) {
-      cookieBanner.style.display = 'flex';
-    }
-
-    // Aceitar cookies
-    document.getElementById('aceitarCookies').addEventListener('click', function () {
-      localStorage.setItem('cookiesAceitos', true);
-      cookieBanner.style.display = 'none';
-    });
-
-    // Abrir Modal
-    window.openModal = function () {
-      if (modal) {
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // desativa scroll
-      }
-    };
-
-    // Fechar Modal
-    window.closeModal = function () {
-      if (modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = ''; // reativa scroll
-      }
-    };
-
-    // Mensagem de envio
-    if (form) {
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        if (mensagem) {
-          mensagem.textContent = 'Cadastro realizado com sucesso!';
-        }
-        setTimeout(() => {
-          form.submit();
-        }, 1500);
-      });
-    }
-  });
-
- 
-   
   
-</script>
+  // ====================================================================
+// SCRIPT FINAL COMPLETO E INTEGRADO
+// ====================================================================
 
-<script>
-   // telefone
-  (function(){
-    const tel = document.getElementById('telefone');
+// --- Funções Globais para o Modal (chamadas via 'onclick') ---
+function openModal() {
+  const modal = document.getElementById('modalPrivacidade');
+  if (modal) {
+    modal.style.display = 'flex';
+  }
+}
 
-    // Ao focar: insere "(" se campo vazio
-    tel.addEventListener('focus', () => {
-      if (!tel.value) tel.value = '(';
-    });
+function closeModal() {
+  const modal = document.getElementById('modalPrivacidade');
+  if (modal) {
+    modal.style.display = 'none';
+  }
+}
 
-    // Ao desfocar: se só tiver "(", limpa
-    tel.addEventListener('blur', () => {
-      if (tel.value === '(') tel.value = '';
-    });
+// --- Lógica principal que roda após o carregamento completo do HTML ---
+document.addEventListener('DOMContentLoaded', function() {
 
-    // Formatação dinâmica e bloqueio de não-dígitos
-    tel.addEventListener('input', () => {
-      let nums = tel.value.replace(/\D/g, '');
-      // limita a 11 dígitos
-      nums = nums.substring(0, 11);
+  // --- LÓGICA DO AVISO DE COOKIES ---
+  const cookieBanner = document.getElementById('cookieBanner');
+  if (cookieBanner) {
+      if (!localStorage.getItem('cookiesAceitos')) {
+          cookieBanner.style.display = 'flex';
+      }
+      const aceitarCookiesBtn = document.getElementById('aceitarCookies');
+      if (aceitarCookiesBtn) {
+          aceitarCookiesBtn.addEventListener('click', function () {
+              localStorage.setItem('cookiesAceitos', 'true');
+              cookieBanner.style.display = 'none';
+          });
+      }
+  }
 
-      if (nums.length <= 2) {
-        // só DDD parcial
-        tel.value = '(' + nums;
-      } else if (nums.length <= 6) {
-        // DDD + parte do número fixo (4 dígitos)
-        tel.value = '(' + nums.substring(0,2) + ') ' + nums.substring(2);
-      } else if (nums.length <= 10) {
-        // DDD + fixo completo
-        tel.value = '(' + nums.substring(0,2) + ') ' + nums.substring(2,6) + '-' + nums.substring(6);
+  // --- LÓGICA DA MÁSCARA DO CAMPO TELEFONE ---
+  const telInput = document.getElementById('telefone');
+  if (telInput) {
+    telInput.addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '').substring(0, 11);
+      if (value.length > 10) {
+        e.target.value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+      } else if (value.length > 6) {
+        e.target.value = value.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+      } else if (value.length > 2) {
+        e.target.value = value.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+      } else if (value.length > 0) {
+        e.target.value = value.replace(/(\d{0,2})/, '($1');
       } else {
-        // DDD + celular completo
-        tel.value = '(' + nums.substring(0,2) + ') ' + nums.substring(2,7) + '-' + nums.substring(7);
+        e.target.value = '';
       }
     });
+  }
 
-    // Validação final no submit
-    document.getElementById('formularioContato').addEventListener('submit', function(e){
-      const telefone = tel.value;
-      const email   = this.email.value.trim();
+  // --- LÓGICA DO SELETOR DE PLANOS CUSTOMIZADO ---
+  const selectElement = document.getElementById('selectTipoPlano');
+  const selectHeaderTrigger = document.getElementById('selectHeaderTipoPlano');
+  const selectHeaderText = document.getElementById('selectHeaderTextTipoPlano');
+  const valoresSelecionadosDiv = document.getElementById('valoresSelecionadosDisplay');
+  const listaSelecionadosUl = document.getElementById('listaSelecionadosDisplay');
 
-      const fixo    = /^\(\d{2}\) \d{4}-\d{4}$/.test(telefone);
-      const celular = /^\(\d{2}\) \d{5}-\d{4}$/.test(telefone);
-      const mail    = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  if (selectElement && selectHeaderTrigger) { 
+      selectHeaderTrigger.addEventListener('click', function() {
+        selectElement.classList.toggle('visible');
+        selectHeaderTrigger.classList.toggle('open');
+      });
 
-      if (!(fixo || celular)) {
-        alert('Telefone inválido. Use (11) 91234-5678 ou (11) 3456-7890.');
-        e.preventDefault();
-        return;
+      selectElement.addEventListener('mousedown', function(event) {
+        if (event.target.tagName === 'OPTION') {
+          event.preventDefault();
+          event.target.selected = !event.target.selected;
+          selectElement.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      });
+
+      function atualizarExibicaoEHeader() {
+        const selectedOptions = Array.from(selectElement.selectedOptions);
+        listaSelecionadosUl.innerHTML = '';
+
+        if (selectedOptions.length > 0) {
+          selectedOptions.forEach(option => {
+            const listItem = document.createElement('li');
+            listItem.textContent = option.textContent;
+            listaSelecionadosUl.appendChild(listItem);
+          });
+          valoresSelecionadosDiv.classList.remove('empty');
+          
+          if (selectedOptions.length === 1) {
+            selectHeaderText.textContent = selectedOptions[0].textContent;
+          } else {
+            selectHeaderText.textContent = `${selectedOptions.length} planos selecionados`;
+          }
+        } else {
+          valoresSelecionadosDiv.classList.add('empty');
+          selectHeaderText.textContent = 'Selecione o Tipo de Plano';
+        }
       }
-      if (!mail) {
-        alert('E-mail inválido. Digite exemplo@dominio.com');
-        e.preventDefault();
+
+      selectElement.addEventListener('change', atualizarExibicaoEHeader);
+      atualizarExibicaoEHeader(); 
+
+      document.addEventListener('click', function(event) {
+        if (!selectElement.contains(event.target) && !selectHeaderTrigger.contains(event.target)) {
+          if (selectElement.classList.contains('visible')) {
+            selectElement.classList.remove('visible');
+            selectHeaderTrigger.classList.remove('open');
+          }
+        }
+      });
+  }
+
+  // --- LÓGICA DE ENVIO DO FORMULÁRIO (VERSÃO FINAL) ---
+  const form = document.querySelector('form');
+  const mensagemDiv = document.getElementById('mensagem');
+
+  if (form && mensagemDiv) {
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Validação do campo customizado antes de prosseguir
+      if (selectElement && selectElement.selectedOptions.length === 0) {
+        alert('Por favor, selecione pelo menos um Tipo de Plano.');
+        return; 
       }
+
+      const submitButton = form.querySelector('button[type="submit"]');
+      const formData = new FormData(form);
+
+      // 1. Prepara a interface para o envio
+      mensagemDiv.style.display = 'none';
+      mensagemDiv.textContent = '';
+      submitButton.disabled = true;
+      submitButton.textContent = 'Enviando...';
+
+      // 2. Tenta enviar os dados via fetch
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // 3A. Se a comunicação foi bem-sucedida
+          mensagemDiv.textContent = 'Formulário enviado com sucesso!';
+          mensagemDiv.style.backgroundColor = '#d4edda';
+          mensagemDiv.style.color = '#155724';
+          mensagemDiv.style.display = 'block';
+          form.reset(); 
+          
+          // Reseta a exibição do seletor customizado
+          if (selectElement) {
+            selectElement.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+
+        } else {
+          // Se o servidor respondeu, mas com um código de erro
+          throw new Error('Falha na resposta do servidor. Verifique se o formulário foi ativado no seu e-mail.');
+        }
+      })
+      .catch(error => {
+        // 3B. Se a comunicação falhou (erro de rede, etc.)
+        mensagemDiv.textContent = 'Ocorreu um erro ao enviar. Por favor, tente novamente.';
+        mensagemDiv.style.backgroundColor = '#f8d7da';
+        mensagemDiv.style.color = '#721c24';
+        mensagemDiv.style.display = 'block';
+        console.error('Erro detalhado:', error);
+      })
+      .finally(() => {
+        // 4. Reabilita o botão no final de qualquer cenário
+        submitButton.disabled = false;
+        submitButton.textContent = 'Enviar';
+      });
     });
-  })();
+  }
+
+}); // Fim do 'DOMContentLoaded'
 </script>
 
 </body>
