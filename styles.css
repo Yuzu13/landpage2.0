@@ -306,10 +306,22 @@ footer a {
 }
 
 .plan h3 {
-  color: #4CAF50;
-  margin-bottom: 10px;
-}
+  /* --- O novo formato de "pílula" --- */
+  display: inline-block;          /* Faz o fundo se ajustar ao tamanho do texto */
+  border-radius: 50px;            /* Deixa os cantos completamente arredondados */
 
+  /* --- O visual mais bonito --- */
+  background: linear-gradient(135deg, #00995A, #007D4B); /* Gradiente sutil de verde */
+  color: #ffffff;                 /* Texto branco */
+  font-weight: 600;               /* Um pouco mais de peso na fonte */
+  letter-spacing: 0.5px;          /* Um leve espaçamento entre as letras para dar elegância */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra no texto para melhor leitura */
+  
+  /* --- Espaçamentos --- */
+  padding: 12px 28px;             /* Mais preenchimento nas laterais para o formato de pílula */
+  margin-top: 0;                  /* Remove qualquer margem superior padrão */
+  margin-bottom: 25px;            /* Aumenta o espaço entre o título e a descrição */
+}
 .container {
   display: flex;
   justify-content: space-between;
@@ -666,6 +678,9 @@ footer a {
 .checkbox-group input[type="checkbox"]:focus + .checkbox-label::before {
   box-shadow: 0 0 5px #BBDEFB;
 }
+
+/* =================== OPÇÃO 2: PREÇO COM ESTILO DE ETIQUETA =================== */
+
 .plan-pricing {
   margin-top: 25px;
   border-top: 1px solid #eee;
