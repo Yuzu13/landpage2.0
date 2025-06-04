@@ -666,3 +666,21 @@ footer a {
 .checkbox-group input[type="checkbox"]:focus + .checkbox-label::before {
   box-shadow: 0 0 5px #BBDEFB;
 }
+.plan-pricing {
+  margin-top: 25px;
+  border-top: 1px solid #eee;
+  padding-top: 25px;
+  color: #555;
+}
+
+.plan-pricing .price-tag {
+  display: inline-block;
+  background-color: #E0F2F1; /* Um verde bem claro e suave */
+  color: #007D4B;           /* Texto em verde escuro para contraste */
+  padding: 8px 15px;
+  border-radius: 50px;       /* Deixa a etiqueta arredondada */
+  font-weight: 500;
+}
+.plan-pricing .price-tag strong {
+  font-weight: 700;
+}
