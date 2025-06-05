@@ -145,6 +145,10 @@
             <option value="Unipart Flex">Unipart Flex</option>
             <option value="Unimax">Unimax</option>
           </select>
+          <div id="valoresSelecionadosDisplay" class="selected-values-display empty">
+            <p>Planos selecionados:</p>
+            <ul id="listaSelecionadosDisplay"></ul>
+          </div>
         </div>
 
         <div class="form-group radio-group">
@@ -176,7 +180,7 @@
   </main>
   
   <footer>
-    <p>Contato: (31) 98790 - 2430</p>
+    <p>Contato: (xx) xxxx-xxxx</p>
     <p>&copy; 2025 Jean Carvalho. Todos os direitos reservados.</p>
     <a href="#" onclick="openModal()">Política de Privacidade</a>
   </footer>
@@ -187,7 +191,7 @@
   <script>
     // --- Funções Globais para o Modal ---
     function openModal() {
-      const modal = document.querySelector('#modalPrivacidade');
+      const modal = document.querySelector('#modalPrivacidade'); 
       if (modal) { modal.style.display = 'flex'; }
     }
 
@@ -211,8 +215,10 @@
         document.querySelectorAll('.nav-menu a').forEach(link => {
           if (!link.hasAttribute('onclick')) {
             link.addEventListener('click', () => {
-              mainNav.classList.remove('nav-open');
-              navToggle.setAttribute('aria-expanded', 'false');
+              if (mainNav.classList.contains('nav-open')) {
+                mainNav.classList.remove('nav-open');
+                if(navToggle) { navToggle.setAttribute('aria-expanded', 'false'); }
+              }
             });
           }
         });
@@ -246,16 +252,20 @@
         });
       }
 
-      // --- LÓGICA DO SELETOR DE PLANOS (VERSÃO SIMPLIFICADA) ---
+      // --- LÓGICA DO SELETOR DE PLANOS (COM EXIBIÇÃO DE ITENS SELECIONADOS) ---
       const selectElement = document.getElementById('selectTipoPlano');
       const selectHeaderTrigger = document.getElementById('selectHeaderTipoPlano');
       const selectHeaderText = document.getElementById('selectHeaderTextTipoPlano');
-      if (selectElement && selectHeaderTrigger && selectHeaderText) {
+      const valoresSelecionadosDiv = document.getElementById('valoresSelecionadosDisplay'); // Re-adicionado
+      const listaSelecionadosUl = document.getElementById('listaSelecionadosDisplay');     // Re-adicionado
+
+      if (selectElement && selectHeaderTrigger && selectHeaderText && valoresSelecionadosDiv && listaSelecionadosUl) { 
           selectHeaderTrigger.addEventListener('click', function(event) {
             event.stopPropagation();
             selectElement.classList.toggle('visible');
             selectHeaderTrigger.classList.toggle('open');
           });
+
           selectElement.addEventListener('mousedown', function(event) {
             if (event.target.tagName === 'OPTION') {
               event.preventDefault();
@@ -263,18 +273,42 @@
               selectElement.dispatchEvent(new Event('change', { bubbles: true }));
             }
           });
-          function atualizarHeaderText() {
+
+          function atualizarExibicaoEHeader() {
             const selectedOptions = Array.from(selectElement.selectedOptions);
-            if (selectedOptions.length === 0) { selectHeaderText.textContent = 'Selecione o Tipo de Plano'; } 
-            else if (selectedOptions.length === 1) { selectHeaderText.textContent = selectedOptions[0].textContent; } 
-            else { selectHeaderText.textContent = `${selectedOptions.length} planos selecionados`; }
+            listaSelecionadosUl.innerHTML = ''; // Limpa a lista anterior
+
+            if (selectedOptions.length > 0) {
+              selectedOptions.forEach(option => {
+                const listItem = document.createElement('li');
+                listItem.textContent = option.textContent;
+                listaSelecionadosUl.appendChild(listItem); // Adiciona à lista de exibição
+              });
+              valoresSelecionadosDiv.classList.remove('empty'); // Mostra a div de selecionados
+              
+              if (selectedOptions.length === 1) {
+                selectHeaderText.textContent = selectedOptions[0].textContent;
+              } else {
+                selectHeaderText.textContent = `${selectedOptions.length} planos selecionados`;
+              }
+            } else {
+              valoresSelecionadosDiv.classList.add('empty'); // Esconde a div de selecionados
+              selectHeaderText.textContent = 'Selecione o Tipo de Plano';
+            }
           }
-          selectElement.addEventListener('change', atualizarHeaderText);
-          document.addEventListener('click', function() {
+
+          selectElement.addEventListener('change', atualizarExibicaoEHeader);
+          
+        // CÓDIGO CORRIGIDO (SUBSTITUA O TRECHO ACIMA POR ESTE)
+      document.addEventListener('click', function(event) { // Fecha ao clicar FORA de todo o componente do seletor
+        if (selectHeaderTrigger && selectElement) { // Garante que os elementos existem
+          if (!selectHeaderTrigger.contains(event.target) && !selectElement.contains(event.target)) {
             selectElement.classList.remove('visible');
             selectHeaderTrigger.classList.remove('open');
-          });
-          atualizarHeaderText();
+          }
+        }
+      });
+          atualizarExibicaoEHeader(); // Garante o estado inicial correto
       }
 
       // --- LÓGICA DE ENVIO DO FORMULÁRIO ---
@@ -323,7 +357,7 @@
           });
         });
       }
-    });
+    }); // Fim do 'DOMContentLoaded'
   </script>
 
 </body>
