@@ -14,7 +14,7 @@ body {
 
 main {
   /* Garante que o conteúdo principal não fique escondido atrás do header fixo */
-  padding-top: 70px; /* Ajuste este valor se a altura do seu header mudar */
+  padding-top: 120px; /* Ajuste este valor se a altura do seu header mudar */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,8 +51,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 .logo img {
-  max-height: 40px;
-  margin-right: 10px;
+  max-height: 120px;
+  margin-right: 8px;
 }
 
 .main-nav {
@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
 .header-cta {
   background: #4CAF50; 
   color: white;
-  padding: 10px 20px;
+  padding: 10px 0px;
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
@@ -612,3 +612,36 @@ footer a {
   }
 }
 
+/* =================== ESTILO DO BOTÃO FLUTUANTE DO WHATSAPP =================== */
+
+.whatsapp-float {
+  /* Posição fixa no canto inferior direito */
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 100; /* Garante que ele fique sobre todos os outros elementos */
+
+  /* Aparência do círculo */
+  width: 60px;
+  height: 60px;
+  background-color: #25D366; /* Cor oficial do WhatsApp */
+  border-radius: 50%; /* Transforma o link em um círculo perfeito */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+  
+  /* Para centralizar o ícone perfeitamente dentro do círculo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Animação suave */
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1); /* Efeito de aumentar um pouco ao passar o mouse */
+}
+
+.whatsapp-float img {
+  width: 35px; /* Tamanho do ícone dentro do círculo */
+  height: auto;
+}
