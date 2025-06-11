@@ -543,7 +543,7 @@ footer a {
   h3 { font-size: 1.3em; } /* Ajusta os títulos h3 dos planos também */
 
   /* Header Mobile */
-  .logo img { max-height: 35px; }
+  .logo img { max-height: 50px; }
   .header-cta { display: none; }
   .nav-toggle { display: block; }
   .nav-menu {
